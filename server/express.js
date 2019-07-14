@@ -35,7 +35,7 @@ server.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'))
 })
 
-server.listen(8080, () => {
+server.listen(process.env.PORT || 8080, () => {
 
   console.log('Listening 8080... ')
 
