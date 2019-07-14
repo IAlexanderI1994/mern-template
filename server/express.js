@@ -28,12 +28,16 @@ passportConfig(passport)
 // API Routes
 server.use('/api/users/', users)
 
-server.use(express.static(path.resolve(__dirname, '../client', 'build')))
+if (process.env.NODE_ENV === 'production') {
+  server.use(express.static(path.resolve(__dirname, '../client', 'build')))
 
-server.get('*', (req, res) => {
+  server.get('*', (req, res) => {
 
-  res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'))
-})
+    res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'))
+  })
+
+}
+
 
 server.listen(process.env.PORT || 8080, () => {
 
