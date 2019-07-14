@@ -11,7 +11,7 @@
     "start": "node server/express.js",
     "dev": "concurrently  \"npm run client\" \"npm run server\"",
     "build": "webpack --config=config/client.prod.config.js",
-    "heroku-postbuild": "npm install --prefix client && npm run dev-build"
+    "heroku-postbuild": "npm install --prefix client && npm run build"
   },
   "author": "Alex Kiryushin",
   "license": "ISC",
