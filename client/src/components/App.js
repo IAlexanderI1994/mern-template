@@ -5,6 +5,7 @@ import '../styles/App.css'
 class App extends Component {
   componentDidMount () {
     axios.get('/api/users/test').then(r => console.log(r.data))
+
   }
 
   render () {
