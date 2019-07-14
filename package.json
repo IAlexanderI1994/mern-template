@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-node-express-mongodb",
+  "name": "mern-template",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -8,6 +8,7 @@
     "server-install": "npm install",
     "server": "nodemon --inspect --watch config --watch server server/main.js",
     "client": "webpack-dev-server --hot --config=config/client.dev.config.js",
+    "start": "node server/main.js",
     "dev": "concurrently  \"npm run client\" \"npm run server\"",
     "dev-build": "webpack --config=config/client.dev.config.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run dev-build"
