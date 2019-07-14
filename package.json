@@ -11,7 +11,7 @@
     "start": "node server/main.js",
     "dev": "concurrently  \"npm run client\" \"npm run server\"",
     "dev-build": "webpack --config=config/client.dev.config.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm install --prefix client && npm run dev-build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run dev-build"
   },
   "author": "Alex Kiryushin",
   "license": "ISC",
@@ -22,7 +22,7 @@
     "@babel/preset-react": "^7.0.0",
     "css-loader": "^3.0.0",
     "style-loader": "^0.23.1",
-    "@babel/register": "^7.4.4",
+
     "@babel/runtime": "^7.4.5",
     "babel-loader": "^8.0.6",
     "html-loader": "^0.5.5",
@@ -34,6 +34,7 @@
     "webpack-hot-middleware": "^2.25.0"
   },
   "dependencies": {
+    "@babel/register": "^7.4.4",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "concurrently": "^4.1.1",
