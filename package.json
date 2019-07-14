@@ -8,7 +8,7 @@
     "server-install": "npm install",
     "server": "nodemon --inspect --watch config --watch server server/main.js",
     "client": "webpack-dev-server --hot --config=config/client.dev.config.js",
-    "start": "node server/main.js",
+    "start": "node server/express.js",
     "dev": "concurrently  \"npm run client\" \"npm run server\"",
     "dev-build": "webpack --config=config/client.dev.config.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run dev-build"
@@ -16,8 +16,14 @@
   "author": "Alex Kiryushin",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
     "css-loader": "^3.0.0",
     "style-loader": "^0.23.1",
+    "@babel/register": "^7.4.4",
+    "@babel/runtime": "^7.4.5",
     "babel-loader": "^8.0.6",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
@@ -28,12 +34,6 @@
     "webpack-hot-middleware": "^2.25.0"
   },
   "dependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/register": "^7.4.4",
-    "@babel/plugin-transform-runtime": "^7.4.4",
-    "@babel/runtime": "^7.4.5",
-    "@babel/preset-react": "^7.0.0",
-    "@babel/preset-env": "^7.4.5",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "concurrently": "^4.1.1",
