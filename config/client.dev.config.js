@@ -8,15 +8,14 @@ module.exports          = {
   mode: 'development',
   output: {
     filename: '[name]-bundle.js',
-    path: path.resolve(__dirname, '../client', 'dist'),
-    // отображение пути при подключении файла, например, вместо dist/index.js будет /index.js, если publicPath: '/'
+    path: path.resolve(__dirname, '../client', 'build'),
     publicPath: '/',
 
   },
   devtool: 'source-map',
   devServer: {
     // при запуске дев сервера будет мониториться эта папка
-    contentBase: 'dist',
+    contentBase: 'build',
     overlay: true,
     hot: true,
     proxy: {
