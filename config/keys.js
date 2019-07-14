@@ -1,6 +1,6 @@
-export default {
-
-  mongoURI: 'mongodb://root:root@localhost:27017/pumpinglife?authSource=admin',
-  secretOrKey: 'secret'
+if ( process.env.NODE_ENV === 'production') {
+  module.exports = require('./keys_prod')
 }
-
+else {
+  module.exports = require('./keys_dev')
+}
