@@ -47,6 +47,11 @@ server.use(staticMiddleware)
 
 server.use(fallback('index.html', { root: path.resolve(__dirname, 'dist') }))
 
+
+server.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../../client/dist', 'index.html'))
+})
+
 server.listen(8080, () => {
 
   console.log('Listening 8080... ')

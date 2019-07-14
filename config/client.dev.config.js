@@ -8,7 +8,7 @@ module.exports          = {
   mode: 'development',
   output: {
     filename: '[name]-bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'client', 'dist'),
     // отображение пути при подключении файла, например, вместо dist/index.js будет /index.js, если publicPath: '/'
     publicPath: '/',
 
